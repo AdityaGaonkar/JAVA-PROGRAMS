@@ -4,10 +4,10 @@ public class countnoofoccurences {
         int count=0;
         for (int i=0;i< arr.length;i++){
             if (ele==arr[i]){
-                count++;
+             count=i;
             }
         }
-        return count;
+        return count+1;
 
     }
     public static void main(String[] args) {
