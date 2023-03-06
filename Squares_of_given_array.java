@@ -1,21 +1,50 @@
 import java.util.Scanner;
 //Given an integer array 'a' sorted in non-decreasing order,return an array of the squares of each number sorted in non-decreasing order
 public class Squares_of_given_array {
-    static void printarr(int[] arr){
-        for (int i=0;i<arr.length;i++)
+
+
+    static void printarr(int[] ans){
+        for (int i=0;i<ans.length;i++)
         {
-            System.out.println(arr[i]);
+            System.out.println(ans[i]);
         }
     }
-    static void squared_array(int[] arr){
-        int n= arr.length;
-        int[] ans=new int[n];
-        int j=0;
-        for (int i=0;i<n;i++){
-            arr[i]=arr[i]*arr[i];
+
+    static void swap(int[] arr,int i,int j){
+        int temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }
+    static void reverse(int[] arr){
+        int i=0,j=arr.length-1;
+        while (i<j){
+            swap(arr,i,j);
+            i++;
+            j--;
         }
-        System.out.println("the squared array is");
-        printarr(arr);
+    }
+
+
+
+    static int[] squared_array(int[] arr) {
+        int n = arr.length;
+        int[] ans = new int[n];
+        int j = 0;
+        int left=0;
+        int right= arr.length-1;
+        while (left<=right){
+            if (Math.abs(arr[left])>Math.abs(arr[right])){
+                ans[j++]=arr[left]*arr[left];
+                left++;
+            }
+            else{
+                ans[j++]=arr[right]*arr[right];
+                right--;
+            }
+
+        }
+        return ans;
+
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
@@ -27,7 +56,12 @@ public class Squares_of_given_array {
         {
             arr[i]=sc.nextInt();
         }
+        System.out.println("Entered elements are");
         printarr(arr);
-        squared_array(arr);
+        int[] ans=squared_array(arr);
+        //sortArray(arr);
+        reverse(ans);
+        System.out.println("sorted array is");
+        printarr(ans);
     }
 }
