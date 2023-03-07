@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class PrefixSum {
     static void printarr(int[] ans){
-        for (int i=0;i<ans.length;i++)
+        for (int i=1;i<ans.length;i++)
         {
             System.out.println(ans[i]);
         }
@@ -21,15 +21,24 @@ public class PrefixSum {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the length of the array");
         int n=sc.nextInt();
-        int[] arr=new int[n];
+        int[] arr=new int[n+1];
         System.out.println("enter the elements of the array");
-        for (int i=0;i< arr.length;i++)
+        for (int i=1;i<= n;i++)
         {
             arr[i]=sc.nextInt();
         }
-        printarr(arr);
+        //printarr(arr);
         int[] pref=PrefixSum(arr);
         System.out.println("prefix sum array is");
         printarr(arr);
+        System.out.println("enter no of queries");
+        int q=sc.nextInt();
+        while (q-->0){
+            System.out.println("enter the range");
+            int l= sc.nextInt();
+            int r= sc.nextInt();
+            int ans =pref[r]-pref[l-1];
+            System.out.println("sum is "+ ans);
+        }
     }
 }
