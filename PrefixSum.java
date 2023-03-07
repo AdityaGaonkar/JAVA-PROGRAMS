@@ -8,10 +8,10 @@ public class PrefixSum {
         }
     }
     static int[] PrefixSum(int[] arr){
-        int n= arr.length;
-        int[] pref=new int[n];
+
+        int[] pref=new int[arr.length];
         pref[0]=arr[0];
-        for (int i=1;i<n;i++){
+        for (int i=1;i< arr.length;i++){
             arr[i]=arr[i-1]+arr[i];
         }
         //printarr(arr);
