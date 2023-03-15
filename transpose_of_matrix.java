@@ -11,14 +11,13 @@ public class transpose_of_matrix {
     }
 
     static int[][] Transpose(int[][] arr,int row,int col){
+        int[][] transpose=new int[col][row];
         for (int i=0;i<col;i++){
-            for (int j=i;j<row;j++){
-                int temp=arr[i][j];
-                arr[i][j]=arr[j][i];
-                arr[j][i]=temp;
+            for (int j=0;j<row;j++){
+                transpose[i][j]=arr[j][i];
             }
         }
-        return arr;
+        return transpose;
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
