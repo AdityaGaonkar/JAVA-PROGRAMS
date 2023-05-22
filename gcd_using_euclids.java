@@ -8,6 +8,6 @@ public class gcd_using_euclids {
         }
     }
     public static void main(String[] args) {
-        System.out.println(gcd(15,24));
+        System.out.println(gcd(30,15));
     }
 }
