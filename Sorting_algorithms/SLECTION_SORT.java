@@ -1,4 +1,6 @@
-public class SELECTION_SORT {
+package Sorting_algorithms;
+
+public class SLECTION_SORT {
     static void selectionsort(int[] arr){
         int n= arr.length;
         for (int i=0;i<n-1;i++){

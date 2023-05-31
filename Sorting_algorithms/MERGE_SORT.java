@@ -1,3 +1,5 @@
+package Sorting_algorithms;
+
 public class MERGE_SORT {
     static void displayarr(int[] arr){
         for (int vals:arr){
@@ -41,11 +43,11 @@ public class MERGE_SORT {
         merge(arr,l,mid,r);
     }
     public static void main(String[] args) {
-       int[] arr={4,5,10,1,25,11,26,71,1,0};
-       int n= arr.length;
+        int[] arr={4,5,10,1,25,11,26,71,1,0};
+        int n= arr.length;
         System.out.println("array before sorting");
         displayarr(arr);
-       mergesort(arr,0,n-1);
+        mergesort(arr,0,n-1);
         System.out.println("\narray after sorting is");
         displayarr(arr);
 
