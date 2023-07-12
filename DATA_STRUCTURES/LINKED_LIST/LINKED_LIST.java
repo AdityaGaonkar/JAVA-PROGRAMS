@@ -29,6 +29,10 @@ public class LINKED_LIST {
             this.data=data;
         }
     }
+    public static class linkedlist{
+        Node head=null;
+        Node tail=null;
+    }
     public static void main(String[] args) {
         Node a=new Node(5);
         Node b=new Node(6);
