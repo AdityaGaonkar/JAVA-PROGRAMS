@@ -50,6 +50,7 @@ public class Implementation_of_linked_list {
         void insertAtPos(int pos,int val){
             Node t=new Node(val);
             Node temp=head;
+
             if (pos==size()){
                 insertAtend(val);
                 return;
@@ -62,6 +63,29 @@ public class Implementation_of_linked_list {
             }
             t.next=temp.next;
             temp.next=t;
+        }
+        int getAt(int pos){
+            Node temp=head;
+            if (pos<0||pos>size()){
+                System.out.println("wrong index");
+                return -1;
+            }
+            for (int i=1;i<=pos;i++){
+                temp=temp.next;
+            }
+            return temp.data;
+        }
+        void deleteAt(int pos){
+            Node temp=head;
+            if (pos==0){
+                head=head.next;
+                return;
+            }
+            for (int i=1;i<=pos-1;i++){
+                temp=temp.next;
+            }
+            temp.next=temp.next.next;
+            tail=temp;
         }
 
     }
@@ -80,6 +104,12 @@ public class Implementation_of_linked_list {
         ll.insertAtPos(6,25);
         ll.display();
         System.out.println();
+        System.out.println(ll.getAt(6 ));
+        ll.deleteAt(2);
+        ll.deleteAt(3);
+        ll.display();
+        System.out.println( );
+
         System.out.println("The size of the list is "+ ll.size());
     }
 }
