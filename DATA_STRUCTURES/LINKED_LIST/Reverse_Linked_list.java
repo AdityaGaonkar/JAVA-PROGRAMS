@@ -8,10 +8,29 @@ public class Reverse_Linked_list {
             this.val=val;
         }
     }
+<<<<<<< HEAD
     public void display(Node head){
         if (head==null) return;
         System.out.print(head .val+" ");
         display(head.next);
+=======
+    public static void display(Node head){
+        if (head==null) return;
+        display(head.next);
+        System.out.print(head .val+" ");
+
+    }
+    public static Node reverseNode(Node head){
+        if (head.next==null)
+        {
+            System.out.println();
+            return head;
+        }
+        Node newHead=reverseNode(head.next);
+        head.next.next=head;
+        head.next=null;
+        return newHead;
+>>>>>>> 6751cab18a0793395b743b664dc7facc6510fe2e
     }
     public static void main(String[] args) {
         Node a=new Node(3);
@@ -27,6 +46,12 @@ public class Reverse_Linked_list {
         d.next=e;
         e.next=f;
         f.next=g;
+<<<<<<< HEAD
 
+=======
+        display(a);
+        a=reverseNode(a);
+        display(a);
+>>>>>>> 6751cab18a0793395b743b664dc7facc6510fe2e
     }
 }
